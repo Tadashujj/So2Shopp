@@ -14,7 +14,7 @@ def main(a):
       Перед использованием магазина необходимо принять пользовательское соглашение📩', reply_markup=register,parse_mode='Markdown')
 @bot.callback_query_handler(func=lambda call: True)
 def regist(reg):
-         photo1 = open('/storage/emulated/0/Documents/Pydroid3/So2.PNG','rb')
+        
          
          if reg.message:
                 
@@ -30,7 +30,7 @@ def regist(reg):
                       menu.add(btn1)
                       menu.add(btn2,btn3)
                       menu.add(btn4)
-                      bot.send_photo(reg.message.chat.id,photo1,reply_markup=menu,parse_mode='Markdown')
+                      bot.send_message(reg.message.chat.id,'ShopSo2',reply_markup=menu,parse_mode='Markdown')
                  if reg.data=='tovar':
                      tovar=types.InlineKeyboardMarkup()
                      btn1=types.InlineKeyboardButton(text='💠КЕШ 0.26.1',callback_data='cash')
